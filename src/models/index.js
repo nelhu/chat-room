@@ -120,8 +120,6 @@ export default {
     },
     changeCurrentUser(state, action) {
      const { user } = action; 
-    //  console.error(user);
-     
      return {
        ...state,
        currentUser: user,
