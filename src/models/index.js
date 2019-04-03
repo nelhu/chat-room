@@ -18,6 +18,7 @@ export default {
         groups: state.groups.concat({
           id: (state.groups[state.groups.length - 1].id || 0) + 1,
           ...group,
+          message: [],
         })
       };
     },
@@ -86,6 +87,45 @@ export default {
           return user;
         })
       };
+    },
+    sendMsg(state, action) {
+      const { user, group, text } = action;
+      const lastMessage = group.message[group.message.length - 1];
+      const id = (lastMessage && lastMessage.id + 1) || 0;
+      let message = {
+        id,
+        text,
+        user,
+        timestamp: Date.now(),
+      };
+      return {
+        ...state,
+        groups: state.groups.map(_group => {
+          if (_group.id === group.id) {
+            _group.message.push(message);
+            return _group
+          }
+          return _group;
+        })
+      }
+    },
+    changeGroup(state, action) {
+     const { index } = action; 
+     return {
+       ...state,
+       session: {
+        current_group_index: index,
+       }
+     }
+    },
+    changeCurrentUser(state, action) {
+     const { user } = action; 
+    //  console.error(user);
+     
+     return {
+       ...state,
+       currentUser: user,
+     }
     },
     
   },

@@ -23,7 +23,7 @@ body {
 
 .layout .menu {
   width: 96px;
-  border: 1px solid red;
+  border-right: 1px solid #e8e8e8;
   background: #f45;
 }
 
@@ -134,12 +134,15 @@ body {
 
 .chatroom-content-group,
 .chatroom-content-user {
-  border: 1px solid red;
+  border: 1px solid #e8e8e8;
   width: 200px;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
 }
+
+/* border-left: 1px solid #e8e8e8; */
+/* border-right: 1px solid #e8e8e8; */
 
 .list-item {
   height: 64px; 
@@ -185,6 +188,7 @@ body {
 
 .chatroom-content-user-list {
   flex: 2;
+  overflow: scroll;
 }
 .chatroom-content-user-detail {
   border-top: 1px solid #e8e8e8;
@@ -198,8 +202,83 @@ body {
   padding : 6px;
 }
 
-
-
 .chatroom-content-room {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
+
+.chatroom-content-room-head {
+  height: 64px;
+  border-top: 1px solid #e8e8e8;
+  line-height: 64px;
+  font-size: 18px;
+  font-weight: 500;
+  padding-left: 6px;
+}
+
+
+.chatroom-content-room-footer {
+  padding: 8px;
+  height: 200px;
+}
+
+.chatroom-content-room-footer-textarea,
+.chatroom-content-room-footer-textarea:focus,
+.chatroom-content-room-footer-textarea:hover,
+.chatroom-content-room-footer-textarea .ant-input:focus {
+  outline: none;
+  resize: none;
+  border: none !important;
+  background:#fff; 
+  border-color:#fff;
+  box-shadow: 0 0 0 2px #fff !important;
+}
+
+.chatroom-content-room-footer-bar {
+  text-align: right;
+  padding-right: 16px;
+}
+
+.btn-red {
+  background: #f45 !important;
+  border-color: #f45 !important;
+  font-size: 12px;
+}
+
+
+.chatroom-content-room-body {
+  flex: 1;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 16px;
+  padding-top: 40px;
+}
+
+.chatroom-content-room-body-message {
+  height: 32px;
+  line-height: 32px;
+  margin-bottom: 3em;
+}
+.is-right {
+  text-align: right
+}
+
+.chatroom-content-room-body-message-content {
+  background: #E4E7EB;
+  max-width: 320px;
+  padding: 12px;
+  border-radius: 6px;
+  position: relative;
+}
+
+.chatroom-content-room-body-message-content-tag {
+  position: absolute;
+  top: -30px;
+  left: 5px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+
+
