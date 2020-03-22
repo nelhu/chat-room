@@ -5,6 +5,6 @@
 ## 技术栈
 react，redux，redux-saga，dva，webpack，babel
 
-## 预览s
+## 预览
 
 ![screenshot](http://img.flashdragon.cn/1a54cf11-7d7c-4250-9593-35b0a557a171.png)
